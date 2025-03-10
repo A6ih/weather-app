@@ -1,12 +1,8 @@
 import "./styles.css";
 import { getWeatherData } from "./apiFuncs";
-import { getLocation, renderTemp } from "./dom";
+import { getLocation, renderWeather } from "./dom";
 
 const form = document.querySelector("#location-form");
-
-function toggleCelsius(temp) {
-  return (((temp - 32) * 5) / 9).toFixed(1);
-}
 
 async function getWeather(location) {
   const allData = await getWeatherData(location);
@@ -25,5 +21,5 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const location = getLocation();
   const data = await getWeather(location);
-  renderTemp(toggleCelsius(data.currentConditions.temp), toggleCelsius(data.currentConditions.feelslike));
+  renderWeather(data.currentConditions.temp, data.currentConditions.feelslike, data.city);
 });

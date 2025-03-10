@@ -10,19 +10,24 @@
       <h1>Weather Now</h1>
       <form action="" id="location-form">
         <label for="location-input">Location: </label>
-        <input type="text" name="location-input" id="location-input" required>
+        <input type="text" name="location-input" id="location-input" required />
         <button type="submit">Go</button>
       </form>
     </header>
     <main>
       <div>
-        <h1 id="temp-display"></h1>
+        <div id="temp-container">
+          <h1 id="temp-display"></h1>
+          <div>
+            <button>°C</button>
+            <button>°F</button>
+          </div>
+        </div>
         <div>
-          <button>°C</button>
-          <button>°F</button>
+          <p id="feelslike-display"></p>
+          <p id="city-display"></p>
         </div>
       </div>
-      <p id="feelslike-display"></p>
     </main>
   </body>
 </html>
