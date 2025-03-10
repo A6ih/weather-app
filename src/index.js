@@ -1,10 +1,12 @@
 import "./styles.css";
 import { getWeatherData } from "./apiFuncs";
+import { getLocation, renderTemp } from "./dom";
+
+const form = document.querySelector("#location-form");
 
 function toggleCelsius(temp) {
-  return (((temp - 32) * 5) / 9).toFixed(1) + "°";
+  return (((temp - 32) * 5) / 9).toFixed(1);
 }
-
 
 async function getWeather(location) {
   const allData = await getWeatherData(location);
@@ -18,10 +20,10 @@ async function getWeather(location) {
   };
 }
 
-async function getRequiredData(location) {
-    const data = await getWeather(location);
-    console.log(data);
-}
 
-getRequiredData("Navi Mumbai");
-
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const location = getLocation();
+  const data = await getWeather(location);
+  renderTemp(toggleCelsius(data.currentConditions.temp), toggleCelsius(data.currentConditions.feelslike));
+});
