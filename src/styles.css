@@ -92,9 +92,26 @@ textarea:not([rows]) {
 :root {
   --clear-day: linear-gradient(to bottom, #3588be, #fdfeff);
   --clear-night: linear-gradient(to bottom, #010822, #6487BD);
-  --partly-cloudy-night: linear-gradient(to bottom, #353938, #272D2A);
   --cloudy: linear-gradient(to bottom, #203850, #4C84A9);
   --fog: linear-gradient(to bottom, #545454, #D0D0D0);
+  --hail : black;
+  --partly-cloudy-day: black;
+  --partly-cloudy-night: linear-gradient(to bottom, #353938, #272D2A);
+  --rain-snow-showers-day: black;
+  --rain-snow-showers-night: black;
+  --rain-snow: black;
+  --rain: black;
+  --showers-day: black;
+  --showers-night: black;
+  --sleet: black;
+  --snow-showers-day: black;
+  --snow-showers-night: black;
+  --snow: black;
+  --thunder-rain: black;
+  --thunder-showers-day: black;
+  --thunder-showers-night: black;
+  --thunder: black;
+  --wind: black;
 }
 
 * {
