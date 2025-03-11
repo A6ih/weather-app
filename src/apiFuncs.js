@@ -4,8 +4,9 @@ export async function getWeatherData(location) {
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=XGMKFAUX6HYVTUZ3FKT4X65XG`,
     );
     const result = await response.json();
+    console.log(result)
     return result;
   } catch (err) {
-    alert(`error: ${err}`);
+    return "not found"
   }
 }
