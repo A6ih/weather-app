@@ -15,7 +15,7 @@ async function getWeather(location) {
   return {
     currentConditions: { conditions, datetime, feelslike, icon, temp },
     description,
-    city: resolvedAddress.split(",")[0],
+    resolvedAddress,
   };
 }
 
@@ -30,8 +30,9 @@ form.addEventListener("submit", async (event) => {
     data.currentConditions.temp,
     data.currentConditions.feelslike,
     data.currentConditions.conditions,
-    data.city,
+    data.resolvedAddress,
     data.description,
     data.currentConditions.icon,
+    data.currentConditions.datetime,
   );
 });

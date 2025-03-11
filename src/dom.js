@@ -1,9 +1,8 @@
+import formatTime from "./formatTime";
+
 const location = document.querySelector("#location-input");
 const tempDisplay = document.querySelector("#temp-display");
 const feelslikeDisplay = document.querySelector("#feelslike-display");
-const cityDisplay = document.querySelector("#city-display");
-const conditionDisplay = document.querySelector("#condition-display");
-const descriptionDisplay = document.querySelector("#description-display");
 let activeUnit = "celsius";
 
 export function getLocation() {
@@ -23,6 +22,21 @@ export function renderTemp(temp, feelslike) {
   document.querySelector("#unit-container").style.display = "block";
 }
 
+function renderInfo(city, condition, description, time) {
+  document.querySelector("#city-display").textContent = city;
+  document.querySelector("#condition-display").textContent = condition;
+  document.querySelector("#description-display").textContent = description;
+  document.querySelector("#time-display").textContent = `As of ${formatTime(time)} (local time)`;
+}
+
+function renderIcon(icon) {
+  document.querySelector("#icon-container").style.display = "block";
+  import(`./images/${icon}.svg`).then(
+    ({ default: image }) => (document.querySelector("img").src = image),
+  );
+  document.querySelector("img").alt = icon;
+}
+
 export function renderWeather(
   temp,
   feelslike,
@@ -30,13 +44,10 @@ export function renderWeather(
   city,
   description,
   icon,
+  time,
 ) {
+  document.querySelector("body").style.background = `var(--${icon})`;
   renderTemp(temp, feelslike);
-  cityDisplay.textContent = city;
-  conditionDisplay.textContent = condition;
-  descriptionDisplay.textContent = description;
-  document.querySelector("#icon-container").style.display = "block";
-  import(`./images/${icon}.svg`).then(
-    ({ default: image }) => (document.querySelector("img").src = image),
-  );
+  renderInfo(city, condition, description, time);
+  renderIcon(icon);
 }
