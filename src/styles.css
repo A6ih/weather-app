@@ -112,6 +112,8 @@ textarea:not([rows]) {
   --thunder-showers-night: black;
   --thunder: black;
   --wind: black;
+  --active-btn: white;
+  --inactive-btn: gray;
 }
 
 * {

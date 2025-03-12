@@ -3,19 +3,35 @@ import formatTime from "./formatTime";
 const location = document.querySelector("#location-input");
 const tempDisplay = document.querySelector("#temp-display");
 const feelslikeDisplay = document.querySelector("#feelslike-display");
+const celsiusBtn = document.querySelector("#celsius-btn");
+const fahrenheitBtn = document.querySelector("#fahrenheit-btn");
 let activeUnit = "celsius";
 let tempFahrenheit;
 let feelsLikeFahrenheit;
+
+celsiusBtn.addEventListener("click", () => {
+  activeUnit = "celsius";
+  changeUnit();
+});
+
+fahrenheitBtn.addEventListener("click", () => {
+  activeUnit = "fahrenheit";
+  changeUnit();
+});
 
 function changeUnit() {
   if (activeUnit === "celsius") {
     tempDisplay.textContent = (((+tempFahrenheit - 32) * 5) / 9).toFixed(1);
     feelslikeDisplay.textContent =
       "Feels like " + (((+feelsLikeFahrenheit - 32) * 5) / 9).toFixed(1) + "°C";
+    celsiusBtn.style.color = "var(--active-btn)";
+    fahrenheitBtn.style.color = "var(--inactive-btn";
   } else {
     tempDisplay.textContent = tempFahrenheit.toFixed(1);
     feelslikeDisplay.textContent =
       "Feels like " + feelsLikeFahrenheit.toFixed(1) + "°F";
+    celsiusBtn.style.color = "var(--inactive-btn)";
+    fahrenheitBtn.style.color = "var(--active-btn";
   }
 }
 
