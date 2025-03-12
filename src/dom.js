@@ -81,6 +81,7 @@ export function renderWeather(
   icon,
   time,
 ) {
+  renderLoaderOff();
   document.querySelector("body").style.background = `var(--${icon})`;
   renderTemp(temp, feelslike);
   renderInfo(city, condition, description, time, windspeed);
@@ -95,11 +96,19 @@ export function renderExtraInfo(
   sunrise,
   sunset,
 ) {
-  document.querySelector("#humidity").textContent = humidity;
-  document.querySelector("#precip").textContent = precip;
+  document.querySelector("#humidity").textContent = humidity.toFixed(0) + "%";
+  document.querySelector("#precip").textContent = precip.toFixed(0) + "%";
   document.querySelector("#uv-index").textContent = uvindex;
   document.querySelector("#visibility").textContent = visibility;
   document.querySelector("#sunrise").textContent = formatTime(sunrise);
   document.querySelector("#sunset").textContent = formatTime(sunset);
   document.querySelector("#extra-info-container").style.display = "flex"
+}
+
+export function renderLoaderOn() {
+  document.querySelector("#loader-container").style.display = "flex";
+}
+
+function renderLoaderOff() {
+  document.querySelector("#loader-container").style.display = "none";
 }
