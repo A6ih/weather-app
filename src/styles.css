@@ -211,3 +211,7 @@ main > div:nth-child(1) {
   min-width: 120px;
   display: none;
 }
+
+#windspeed-display {
+  font-size: 14px;
+}

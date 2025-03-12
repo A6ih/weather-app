@@ -21,7 +21,7 @@ export default function formatTime(time) {
   } else if (+timeArr[0] < 12 && timeArr[0] !== "00") {
     formattedTime = `${timeArr[0]}:${timeArr[1]} AM`;
   } else if (+timeArr[0] > 11) {
-    formattedTime = `${times[+timeArr[0]]}:${timeArr[1]} PM`
+    formattedTime = `${times[+timeArr[0]]}:${timeArr[1]} PM`;
   }
   return formattedTime;
 }

@@ -6,7 +6,9 @@ const feelslikeDisplay = document.querySelector("#feelslike-display");
 let activeUnit = "celsius";
 
 export function getLocation() {
-  console.log(location.value);
+  if(location.value === "") {
+    location.value = "Kuopio"
+  }
   return location.value;
 }
 
@@ -22,11 +24,14 @@ export function renderTemp(temp, feelslike) {
   document.querySelector("#unit-container").style.display = "block";
 }
 
-function renderInfo(city, condition, description, time) {
+function renderInfo(city, condition, description, time, windspeed) {
   document.querySelector("#city-display").textContent = city;
   document.querySelector("#condition-display").textContent = condition;
   document.querySelector("#description-display").textContent = description;
-  document.querySelector("#time-display").textContent = `As of ${formatTime(time)} (local time)`;
+  document.querySelector("#time-display").textContent =
+    `As of ${formatTime(time)} (local time)`;
+  document.querySelector("#windspeed-display").textContent =
+    `Wind: ${windspeed} m/s`;
 }
 
 function renderIcon(icon) {
@@ -40,6 +45,7 @@ function renderIcon(icon) {
 export function renderWeather(
   temp,
   feelslike,
+  windspeed,
   condition,
   city,
   description,
@@ -48,6 +54,6 @@ export function renderWeather(
 ) {
   document.querySelector("body").style.background = `var(--${icon})`;
   renderTemp(temp, feelslike);
-  renderInfo(city, condition, description, time);
+  renderInfo(city, condition, description, time, windspeed);
   renderIcon(icon);
 }
