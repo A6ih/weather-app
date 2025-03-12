@@ -84,3 +84,14 @@ export function renderWeather(
   renderInfo(city, condition, description, time, windspeed);
   renderIcon(icon);
 }
+
+function renderExtraInfo(
+  humidity,
+  percip,
+  uvindex,
+  visibility,
+  sunrise,
+  sunset,
+) {
+ 
+}
