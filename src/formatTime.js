@@ -1,17 +1,12 @@
 export default function formatTime(time) {
   const times = [];
-  for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < 24; i++) {
     if (i < 10) {
       times.push(`0${i}`);
-    } else {
+    } else if (i > 9 && i < 13) {
       times.push(`${i}`);
-    }
-  }
-  for (let i = 1; i < 12; i++) {
-    if (i < 10) {
-      times.push(`0${i}`);
     } else {
-      times.push(`${i}`);
+      times.push(`${i - 12}`);
     }
   }
   const timeArr = time.split(":");
