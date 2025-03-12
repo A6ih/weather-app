@@ -25,11 +25,14 @@
             </div>
           </div>
           <p id="feelslike-display"></p>
-          <p id="windspeed-display"></p>
+          <div id="wind-container">
+            <p id="windspeed-display"></p>
+            <img class="icon" src="./images/wind.png" alt="wind" />
+          </div>
           <h3 id="condition-display"></h3>
         </div>
         <div id="icon-container">
-          <img src="" alt="" />
+          <img id="weather-icon" />
         </div>
       </div>
       <div>
@@ -39,28 +42,58 @@
       </div>
       <div id="extra-info-container">
         <div>
-          <p id="humidity"></p>
-          <img src="" alt="" />
+          <div>
+            <div>
+              <img class="icon" src="./images/humidity.png" alt="humidity" />
+              <p>Humidity</p>
+            </div>
+            <p id="humidity"></p>
+          </div>
+          <div>
+            <div>
+              <img
+                class="icon"
+                src="./images/precipitation.png"
+                alt="precipitation"
+              />
+              <p>Precipitation</p>
+            </div>
+            <p id="precip"></p>
+          </div>
+          <div>
+            <div>
+              <img class="icon" src="./images/uv-index.png" alt="uv-index" />
+              <p>UV-Index</p>
+            </div>
+            <p id="uv-index"></p>
+          </div>
         </div>
         <div>
-          <p id="percip"></p>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p id="uv-index"></p>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p id="visibility"></p>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p id="sunrise"></p>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p id="sunset"></p>
-          <img src="" alt="" />
+          <div>
+            <div>
+              <img
+                class="icon"
+                src="./images/visibility.png"
+                alt="visibility"
+              />
+              <p>Visibility</p>
+            </div>
+            <p id="visibility"></p>
+          </div>
+          <div>
+            <div>
+              <img class="icon" src="./images/sunrise.png" alt="sunrise" />
+              <p>Sunrise</p>
+            </div>
+            <p id="sunrise"></p>
+          </div>
+          <div>
+            <div>
+              <img class="icon" src="./images/sunset.png" alt="sunset" />
+              <p>Sunset</p>
+            </div>
+            <p id="sunset"></p>
+          </div>
         </div>
       </div>
     </main>

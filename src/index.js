@@ -1,6 +1,6 @@
 import "./styles.css";
 import { getWeatherData } from "./apiFuncs";
-import { getLocation, renderWeather } from "./dom";
+import { getLocation, renderWeather, renderExtraInfo } from "./dom";
 
 const form = document.querySelector("#location-form");
 
@@ -9,8 +9,20 @@ async function getWeather(location) {
   if (allData === "not found") {
     return allData;
   }
-  const { conditions, datetime, feelslike, icon, temp, windspeed } =
-    allData.currentConditions;
+  const {
+    conditions,
+    datetime,
+    feelslike,
+    icon,
+    temp,
+    windspeed,
+    humidity,
+    precipprob,
+    sunrise,
+    sunset,
+    uvindex,
+    visibility,
+  } = allData.currentConditions;
   const { description, resolvedAddress } = allData;
   return {
     currentConditions: {
@@ -20,6 +32,12 @@ async function getWeather(location) {
       icon,
       temp,
       windspeed,
+      humidity,
+      precipprob,
+      sunrise,
+      sunset,
+      uvindex,
+      visibility,
     },
     description,
     resolvedAddress,
@@ -41,6 +59,14 @@ async function renderPage() {
     data.description,
     data.currentConditions.icon,
     data.currentConditions.datetime,
+  );
+  renderExtraInfo(
+    data.currentConditions.humidity,
+    data.currentConditions.precipprob,
+    data.currentConditions.uvindex,
+    data.currentConditions.visibility,
+    data.currentConditions.sunrise,
+    data.currentConditions.sunset,
   );
 }
 

@@ -59,12 +59,14 @@ function renderInfo(city, condition, description, time, windspeed) {
     `As of ${formatTime(time)} (local time)`;
   document.querySelector("#windspeed-display").textContent =
     `Wind: ${windspeed} m/s`;
+  document.querySelector("#wind-container").style.display = "flex";
 }
 
 function renderIcon(icon) {
   document.querySelector("#icon-container").style.display = "block";
   import(`./images/${icon}.svg`).then(
-    ({ default: image }) => (document.querySelector("img").src = image),
+    ({ default: image }) =>
+      (document.querySelector("#weather-icon").src = image),
   );
   document.querySelector("img").alt = icon;
 }
@@ -85,13 +87,19 @@ export function renderWeather(
   renderIcon(icon);
 }
 
-function renderExtraInfo(
+export function renderExtraInfo(
   humidity,
-  percip,
+  precip,
   uvindex,
   visibility,
   sunrise,
   sunset,
 ) {
- 
+  document.querySelector("#humidity").textContent = humidity;
+  document.querySelector("#precip").textContent = precip;
+  document.querySelector("#uv-index").textContent = uvindex;
+  document.querySelector("#visibility").textContent = visibility;
+  document.querySelector("#sunrise").textContent = formatTime(sunrise);
+  document.querySelector("#sunset").textContent = formatTime(sunset);
+  document.querySelector("#extra-info-container").style.display = "flex"
 }

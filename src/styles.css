@@ -157,6 +157,7 @@ form button {
   background-color: green;
   color: white;
   cursor: pointer;
+  border: 2px solid black;
 }
 
 header {
@@ -183,8 +184,8 @@ main > div:nth-child(1) {
 }
 
 main > div:nth-child(1) > div:first-child {
- min-width: 160px;
- text-align: left;
+  min-width: 160px;
+  text-align: left;
 }
 
 #temp-container {
@@ -221,4 +222,57 @@ main > div:nth-child(1) > div:first-child {
 
 #windspeed-display {
   font-size: 14px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+#wind-container {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+#extra-info-container > div > div > div {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid white;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#extra-info-container > div > div > p {
+  align-self: center;
+}
+
+#extra-info-container > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+#extra-info-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+#extra-info-container > div:first-child {
+  border-right: 2px solid white;
+  padding-right: 6px;
+}
+
+#extra-info-container {
+  display: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  min-width: clamp(350px, 60%, 450px);
+  gap: 6px;
+  padding: 12px 6px;
+  box-shadow: 0px 0px 1px black;
 }
