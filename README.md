@@ -9,6 +9,7 @@ live preview [here](https://a6ih.github.io/weather-app/)
 # Features
 
 - Get current weather information about most of the locations
+- Toggle temperature unit with Celsius and Fahrenheit buttons
 - Responsive page design
 - Dynamic background colors based on current weather
 - Dynamic weather Icons
