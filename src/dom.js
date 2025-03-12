@@ -106,6 +106,7 @@ export function renderExtraInfo(
 }
 
 export function renderLoaderOn() {
+  document.querySelector("main").style.display = "none";
   document.querySelector("#loader-container").style.display = "flex";
 }
 

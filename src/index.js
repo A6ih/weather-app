@@ -55,10 +55,11 @@ async function renderPage() {
   const location = getLocation();
   const data = await getWeather(location);
   if (data === "not found") {
-    alert("Data about location not found");
     renderLoaderOff()
+    alert(`Data about ${location} not found`);
     return;
   }
+  document.querySelector("main").style.display = "flex";
   renderWeather(
     data.currentConditions.temp,
     data.currentConditions.feelslike,
