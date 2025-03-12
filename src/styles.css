@@ -94,24 +94,52 @@ textarea:not([rows]) {
   --clear-night: linear-gradient(to bottom, #010822, #6487bd);
   --cloudy: linear-gradient(to bottom, #272d2a, #203850);
   --fog: linear-gradient(to bottom, #545454, #d0d0d0);
-  --hail: linear-gradient(to bottom, #6487bd, #C8CDD7, #1D2C2F);
-  --partly-cloudy-day: linear-gradient(to bottom, #3588be, #2B323D, #fdfeff);
+  --hail: linear-gradient(to bottom, #6487bd, #c8cdd7, #1d2c2f);
+  --partly-cloudy-day: linear-gradient(to bottom, #3588be, #2b323d, #fdfeff);
   --partly-cloudy-night: linear-gradient(to bottom, #010822, #272d2a, #6487bd);
-  --rain-snow-showers-day: linear-gradient(to bottom, #3588be, #fdfeff, #2B323D);
-  --rain-snow-showers-night: linear-gradient(to bottom, #010822, #fdfeff, #6487bd);
+  --rain-snow-showers-day: linear-gradient(
+    to bottom,
+    #3588be,
+    #fdfeff,
+    #2b323d
+  );
+  --rain-snow-showers-night: linear-gradient(
+    to bottom,
+    #010822,
+    #fdfeff,
+    #6487bd
+  );
   --rain-snow: linear-gradient(to bottom, #272d2a, #fdfeff, #203850);
-  --rain: linear-gradient(to bottom, #6487bd, #93c5d7, #0E6483);
-  --showers-day: linear-gradient(to bottom, #133851, #93c5d7, #0E6483);
-  --showers-night: linear-gradient(to bottom, #010822, #93c5d7, #292B2F);
-  --sleet: linear-gradient(to bottom, #6487bd, #C8CDD7, #1D2C2F);
-  --snow-showers-day: linear-gradient(to bottom, #3588be, #fdfeff, #2B323D);
+  --rain: linear-gradient(to bottom, #6487bd, #93c5d7, #0e6483);
+  --showers-day: linear-gradient(to bottom, #133851, #93c5d7, #0e6483);
+  --showers-night: linear-gradient(to bottom, #010822, #93c5d7, #292b2f);
+  --sleet: linear-gradient(to bottom, #6487bd, #c8cdd7, #1d2c2f);
+  --snow-showers-day: linear-gradient(to bottom, #3588be, #fdfeff, #2b323d);
   --snow-showers-night: linear-gradient(to bottom, #010822, #fdfeff, #6487bd);
-  --snow: linear-gradient(to bottom, #AFC6E7, #D8E0EB, #FFFFFF);
-  --thunder-rain: linear-gradient(to bottom, #6487bd, #F7C9A7, #93c5d7, #0E6483);
-  --thunder-showers-day: linear-gradient(to bottom, #133851, #F7C9A7, #93c5d7, #0E6483);
-  --thunder-showers-night: linear-gradient(to bottom, #010822, #F7C9A7, #93c5d7, #292B2F);;
-  --thunder: linear-gradient(to bottom, #6E4733, #F7C9A7, #0E0808);
-  --wind: linear-gradient(to right, #6487bd, #93c5d7, #0E6483);
+  --snow: linear-gradient(to bottom, #afc6e7, #d8e0eb, #ffffff);
+  --thunder-rain: linear-gradient(
+    to bottom,
+    #6487bd,
+    #f7c9a7,
+    #93c5d7,
+    #0e6483
+  );
+  --thunder-showers-day: linear-gradient(
+    to bottom,
+    #133851,
+    #f7c9a7,
+    #93c5d7,
+    #0e6483
+  );
+  --thunder-showers-night: linear-gradient(
+    to bottom,
+    #010822,
+    #f7c9a7,
+    #93c5d7,
+    #292b2f
+  );
+  --thunder: linear-gradient(to bottom, #6e4733, #f7c9a7, #0e0808);
+  --wind: linear-gradient(to right, #6487bd, #93c5d7, #0e6483);
   --active-btn: white;
   --inactive-btn: gray;
 }
@@ -292,12 +320,16 @@ footer {
     var(--_g) 100% 100%,
     var(--_g) 0 100%;
   background-size: 40% 40%;
-  animation: l38 .5s infinite;
+  animation: l38 0.5s infinite;
 }
 
 @keyframes l38 {
   100% {
-    background-position: 100% 0, 100% 100%, 0 100%, 0 0
+    background-position:
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 0;
   }
 }
 
