@@ -109,6 +109,6 @@ export function renderLoaderOn() {
   document.querySelector("#loader-container").style.display = "flex";
 }
 
-function renderLoaderOff() {
+export function renderLoaderOff() {
   document.querySelector("#loader-container").style.display = "none";
 }

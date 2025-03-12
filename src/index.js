@@ -1,6 +1,12 @@
 import "./styles.css";
 import { getWeatherData } from "./apiFuncs";
-import { getLocation, renderWeather, renderExtraInfo, renderLoaderOn} from "./dom";
+import {
+  getLocation,
+  renderWeather,
+  renderExtraInfo,
+  renderLoaderOn,
+  renderLoaderOff,
+} from "./dom";
 
 const form = document.querySelector("#location-form");
 
@@ -45,11 +51,13 @@ async function getWeather(location) {
 }
 
 async function renderPage() {
-  renderLoaderOn()
+  renderLoaderOn();
   const location = getLocation();
   const data = await getWeather(location);
   if (data === "not found") {
-    return alert("Data about location not found");
+    alert("Data about location not found");
+    renderLoaderOff()
+    return;
   }
   renderWeather(
     data.currentConditions.temp,
